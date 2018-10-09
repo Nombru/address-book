@@ -13,14 +13,16 @@ $(document).ready(function() {
     var inputtedLastName = $("input#new-last-name").val();
 
     var newContact = new Contact(inputtedFirstName, inputtedLastName);
-
+// Appending UL with List Items of captured address content
     $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
+// Showing the stored values
     $(".contact").last().click(function() {
       $("#show-contact").show();
       $("#show-contact h2").text(newContact.firstName);
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
     });
+
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
   });
